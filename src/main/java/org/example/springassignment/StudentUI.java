@@ -48,18 +48,14 @@ public class StudentUI {
     public void insertStudent() {
         System.out.print("Enter Student ID: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // consume newline
-
+        scanner.nextLine();
         System.out.print("Enter Student Full Name: ");
         String fullName = scanner.nextLine();
-
         System.out.print("Enter Student Gender (M/F): ");
         String gender = scanner.nextLine();
-
         System.out.print("Enter Score: ");
         double score = scanner.nextDouble();
-        scanner.nextLine(); // consume newline
-
+        scanner.nextLine();
         Student student = new Student(id, fullName, gender, score);
         studentService.InsertStudent(student);
         System.out.println("Student added successfully!");
@@ -73,7 +69,6 @@ public class StudentUI {
         System.out.print("Enter Student ID: ");
         int id = scanner.nextInt();
         scanner.nextLine();
-
         Student student = studentService.SelectStudentById(id);
         if (student != null) {
             System.out.println(student);
@@ -86,17 +81,13 @@ public class StudentUI {
         System.out.print("Enter Student ID to update: ");
         int id = scanner.nextInt();
         scanner.nextLine();
-
         System.out.print("Enter new Full Name: ");
         String fullName = scanner.nextLine();
-
         System.out.print("Enter new Gender (M/F): ");
         String gender = scanner.nextLine();
-
         System.out.print("Enter new Score: ");
         double score = scanner.nextDouble();
         scanner.nextLine();
-
         boolean updated = studentService.updateStudentById(id, fullName, gender, score);
         if (updated) {
             System.out.println("Student updated successfully!");
@@ -109,7 +100,6 @@ public class StudentUI {
         System.out.print("Enter Student ID to delete: ");
         int id = scanner.nextInt();
         scanner.nextLine();
-
         boolean deleted = studentService.deleteStudentById(id);
         if (deleted) {
             System.out.println("Student deleted successfully!");
